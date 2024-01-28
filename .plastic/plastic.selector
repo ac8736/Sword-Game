@@ -1,0 +1,4 @@
+repository "week1@yw8065@cloud"
+  path "/"
+    br "/main"
+    co "/main"
