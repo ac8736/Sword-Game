@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 public class AttackPlayer : MonoBehaviour
 {
     public int hp = 1;
+    public AudioClip shieldedsound;
+    public AudioSource audiosource;
 
     public float speed;
     private Transform target;
@@ -15,6 +17,7 @@ public class AttackPlayer : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("TargetWall").transform;
         speed = Random.Range(0.5f, GlobalVars.missileSpeed);
+
     }
 
     // Update is called once per frame

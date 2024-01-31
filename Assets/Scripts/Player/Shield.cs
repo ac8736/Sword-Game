@@ -9,10 +9,17 @@ public class Shield : MonoBehaviour
     public TextMeshProUGUI textMeshPro;
     public TextMeshProUGUI emergencyTMP;
     public GameObject immuneShield;
-
+    public AudioClip shieldedsound;
+    public AudioSource audiosource;
     private bool isIFramed = false;
-    private bool canIFrame = true;
 
+    private bool canIFrame = true;
+    void Start()
+    {
+        audiosource = GetComponent<AudioSource>();
+        audiosource.clip = shieldedsound;
+
+    }
     private void Update()
     {
         textMeshPro.text = "Shield: " + controller.shieldPercentage + "%";
@@ -24,6 +31,7 @@ public class Shield : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Barrier") && controller.isActiveShield)
         {
+            audiosource.Play();
             Destroy(other.gameObject);
         } 
         else
