@@ -49,17 +49,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && shieldPercentage > 0)
         {
-            if (shieldPercentage > 0)
-            {
-                isActiveShield = true;
-            }
+            isActiveShield = true;
         } 
         else
         {
-            if (shieldPercentage < 100)
-            {
-                isActiveShield = false;
-            }
+            isActiveShield = false;
         }
         shield.SetActive(isActiveShield);
 
