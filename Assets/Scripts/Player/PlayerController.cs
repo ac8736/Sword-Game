@@ -69,10 +69,11 @@ public class PlayerController : MonoBehaviour
         }
 
         depthTMP.text = "Depth: " + (int)(transform.position.y + 10.92) + "m";
-        healthTMP.text = "Hull Damage: " + health + "%";
+        healthTMP.text = "Damage: " + health + "%";
 
         if (health >= 100)
         {
+            GlobalVars.score = (int)(transform.position.y + 10.92);
             SceneManager.LoadScene("End");
         }
     }
